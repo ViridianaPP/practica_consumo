@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:recetario_utez/app.dart';
+import 'package:recetario_utez/datos/cliente_http.dart';
+import 'package:recetario_utez/datos/dummyjson_repositorio.dart';
 
 void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
-    );
-  }
+  runApp(
+    AppRecetario(repositorio: DummyJsonRepositorio(crearDioRecetas())),
+  );
 }
